@@ -63,6 +63,9 @@ public class AnsibleHelper {
             playbookSb.append("-i /home/simon/ansible/hosts ");
 
             playbookSb.append(playbookPath).append(" --extra-vars '").append(playbookParamStr).append("'");
+
+            System.out.println(playbookSb.toString());
+
             return ExecLinuxCMD.exec(playbookSb.toString()).toString();
         }
     }
