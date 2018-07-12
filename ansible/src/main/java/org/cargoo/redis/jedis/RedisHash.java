@@ -21,7 +21,7 @@ public class RedisHash {
 	 * @return 如果存在返回0 异常返回null
 	 */
 	public Long set(String key, String field, String value) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hset(key, field, value);
 		} finally {
@@ -38,7 +38,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public Long setnx(String key, String field, String value) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hsetnx(key, field, value);
 		} finally {
@@ -54,7 +54,7 @@ public class RedisHash {
 	 * @return 返回OK 异常返回null
 	 */
 	public String mset(String key, Map<String, String> hash) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hmset(key, hash);
 		} finally {
@@ -70,7 +70,7 @@ public class RedisHash {
 	 * @return 没有返回null
 	 */
 	public String get(String key, String field) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hget(key, field);
 		} finally {
@@ -87,7 +87,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public List<String> mget(String key, String... fields) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hmget(key, fields);
 		} finally {
@@ -104,7 +104,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public Long incrby(String key, String field, long value) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hincrBy(key, field, value);
 		} finally {
@@ -120,7 +120,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public Boolean exists(String key, String field) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hexists(key, field);
 		} finally {
@@ -135,7 +135,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public Long len(String key) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hlen(key);
 		} finally {
@@ -152,7 +152,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public Long del(String key, String... fields) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hdel(key, fields);
 		} finally {
@@ -167,7 +167,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public Set<String> keys(String key) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hkeys(key);
 		} finally {
@@ -182,7 +182,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public List<String> vals(String key) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hvals(key);
 		} finally {
@@ -197,7 +197,7 @@ public class RedisHash {
 	 * @return
 	 */
 	public Map<String, String> getall(String key) {
-		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
+		Jedis jedis = org.cargoo.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.hgetAll(key);
 		} finally {

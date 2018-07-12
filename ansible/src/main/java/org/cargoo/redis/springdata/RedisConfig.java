@@ -1,4 +1,4 @@
-package com.ansel.testall.redis.springdata;
+package org.cargoo.redis.springdata;
 
 import java.lang.reflect.Method;
 
@@ -83,12 +83,12 @@ public class RedisConfig extends CachingConfigurerSupport {
 		template.setValueSerializer(jackson2JsonRedisSerializer);
 	}
 
-	@Bean
-	public CacheManager cacheManager(RedisTemplate redisTemplate) {
-		RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
-		// 设置缓存过期时间
-		rcm.setDefaultExpiration(600);// 秒
-		return rcm;
-	}
+//	@Bean
+//	public CacheManager cacheManager(RedisTemplate redisTemplate) {
+//		RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
+//		// 设置缓存过期时间
+////		rcm.setDefaultExpiration(600);// 秒
+//		return rcm;
+//	}
 
 }
