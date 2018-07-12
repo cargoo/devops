@@ -59,6 +59,9 @@ public class AnsibleHelper {
         private static String doAnisblePlaybook(Map<String, Object> playbookParamMap, String playbookPath) {
             String playbookParamStr = JsonHelper.object2Json(playbookParamMap);
             StringBuilder playbookSb = new StringBuilder("ansible-playbook ");
+
+            playbookSb.append("-i /home/simon/ansible/hosts ");
+
             playbookSb.append(playbookPath).append(" --extra-vars '").append(playbookParamStr).append("'");
             return ExecLinuxCMD.exec(playbookSb.toString()).toString();
         }
