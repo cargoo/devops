@@ -1,4 +1,4 @@
-package com.ansel.testall.redis.jedis;
+package org.cargoo.redis.jedis;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class RedisList {
 	 * @return 返回list的value个数
 	 */
 	public Long lpush(String key, String... strs) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.lpush(key, strs);
 		} finally {
@@ -36,7 +36,7 @@ public class RedisList {
 	 * @return 返回list的value个数
 	 */
 	public Long rpush(String key, String... strs) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.rpush(key, strs);
 		} finally {
@@ -57,7 +57,7 @@ public class RedisList {
 	 * @return
 	 */
 	public Long insert(String key, LIST_POSITION where, String pivot, String value) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.linsert(key, where, pivot, value);
 		} finally {
@@ -75,7 +75,7 @@ public class RedisList {
 	 * @return 成功返回OK
 	 */
 	public String set(String key, Long index, String value) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.lset(key, index, value);
 		} finally {
@@ -93,7 +93,7 @@ public class RedisList {
 	 * @return 返回被删除的个数
 	 */
 	public Long rem(String key, long count, String value) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.lrem(key, count, value);
 		} finally {
@@ -110,7 +110,7 @@ public class RedisList {
 	 * @return 成功返回OK
 	 */
 	public String trim(String key, long start, long end) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.ltrim(key, start, end);
 		} finally {
@@ -125,7 +125,7 @@ public class RedisList {
 	 * @return
 	 */
 	public String lpop(String key) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.lpop(key);
 		} finally {
@@ -140,7 +140,7 @@ public class RedisList {
 	 * @return
 	 */
 	public String rpop(String key) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.rpop(key);
 		} finally {
@@ -156,7 +156,7 @@ public class RedisList {
 	 * @return
 	 */
 	public String rpoplpush(String srckey, String dstkey) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.rpoplpush(srckey, dstkey);
 		} finally {
@@ -172,7 +172,7 @@ public class RedisList {
 	 * @return 如果没有返回null
 	 */
 	public String index(String key, long index) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.lindex(key, index);
 		} finally {
@@ -187,7 +187,7 @@ public class RedisList {
 	 * @return
 	 */
 	public Long len(String key) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.llen(key);
 		} finally {
@@ -204,7 +204,7 @@ public class RedisList {
 	 * @return
 	 */
 	public List<String> range(String key, long start, long end) {
-		Jedis jedis = RedisPoolUtil.getInstance();
+		Jedis jedis = com.ansel.testall.redis.jedis.RedisPoolUtil.getInstance();
 		try {
 			return jedis.lrange(key, start, end);
 		} finally {

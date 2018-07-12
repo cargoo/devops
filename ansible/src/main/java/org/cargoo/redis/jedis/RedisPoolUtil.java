@@ -1,4 +1,4 @@
-package com.ansel.testall.redis.jedis;
+package org.cargoo.redis.jedis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

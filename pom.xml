@@ -6,7 +6,11 @@
 
     <groupId>org.cargoo</groupId>
     <artifactId>parent</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>ansible</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,5 +55,12 @@
             <version>2.9.6</version>
         </dependency>
 
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.20</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
